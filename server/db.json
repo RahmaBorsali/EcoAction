@@ -1,0 +1,314 @@
+{
+  "users": [
+    {
+      "id": "2f19",
+      "name": "Rahma Borsali",
+      "email": "borsalirahma@gmail.com",
+      "password": "Rahma@2003",
+      "avatar": "https://ui-avatars.com/api/?name=Rahma%20Borsali&background=2D6A4F&color=fff&size=200",
+      "bio": "Nouveau bénévole EcoAction 🌱",
+      "stats": {
+        "missionsCompleted": 0,
+        "upcomingMissions": 0,
+        "totalHours": 0,
+        "impact": "0 kg de déchets collectés"
+      },
+      "createdAt": "2026-02-19T21:30:00.430Z"
+    }
+  ],
+  "missions": [
+    {
+      "id": "m1",
+      "title": "Nettoyage de la Plage de Sidi Bou Saïd",
+      "category": "beach",
+      "description": "Rejoignez-nous pour nettoyer l'une des plus belles plages de Tunisie. Chaque déchet ramassé compte !",
+      "longDescription": "Cette mission de nettoyage se déroulera sur la plage de Sidi Bou Saïd, un site emblématique qui mérite toute notre attention. Nous collecterons les déchets plastiques, les mégots, et tout autre polluant qui menace l'écosystème marin. Des gants, sacs et outils seront fournis sur place. Cette action contribue directement à la préservation de la faune marine et à la sensibilisation des riverains. En 2024, plus de 200 bénévoles ont collecté 850 kg de déchets sur cette même plage.",
+      "date": "2026-02-25T00:00:00.000Z",
+      "time": "08:30",
+      "location": "Plage de Sidi Bou Saïd",
+      "city": "Tunis",
+      "spots": 30,
+      "spotsLeft": 12,
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "organizer": "Association Mer Propre",
+      "duration": "3 heures",
+      "requirements": [
+        "Tenue confortable et résistante",
+        "Chaussures fermées obligatoires",
+        "Gourde d'eau",
+        "Crème solaire",
+        "Bonne humeur 😄"
+      ],
+      "tags": [
+        "plage",
+        "plastique",
+        "mer",
+        "nettoyage"
+      ],
+      "createdAt": "2026-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "m2",
+      "title": "Plantation d'Arbres – Forêt de Khanguet",
+      "category": "forest",
+      "description": "Participez à la reforestation de la forêt de Khanguet en plantant des pins et oliviers indigènes.",
+      "longDescription": "La déforestation est l'un des défis environnementaux majeurs de notre région. Cette journée de plantation vise à restaurer 2 hectares de forêt dégradée dans la région de Bizerte. Nous planterons des espèces locales (pin pignon, chêne-liège, olivier) qui s'adapteront naturellement au climat tunisien. Les plants sont fournis par la Direction Générale des Forêts. Chaque arbre planté séquestre en moyenne 22 kg de CO₂ par an. Rejoignez ce projet de reforestation à long terme !",
+      "date": "2026-03-05T00:00:00.000Z",
+      "time": "07:00",
+      "location": "Forêt de Khanguet",
+      "city": "Bizerte",
+      "spots": 50,
+      "spotsLeft": 23,
+      "imageUrl": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+      "organizer": "Forêts Vivantes TN",
+      "duration": "5 heures",
+      "requirements": [
+        "Vêtements que vous n'avez pas peur de salir",
+        "Chaussures de marche",
+        "Chapeau ou casquette",
+        "Gants de jardinage (fournis si non disponibles)"
+      ],
+      "tags": [
+        "reforestation",
+        "arbres",
+        "CO2",
+        "biodiversité"
+      ],
+      "createdAt": "2026-01-12T08:00:00.000Z"
+    },
+    {
+      "id": "m3",
+      "title": "Atelier Zéro Déchet – Fabrication de Produits Ménagers",
+      "category": "waste",
+      "description": "Apprenez à fabriquer vos propres produits ménagers naturels et réduisez votre empreinte plastique.",
+      "longDescription": "Cet atelier pratique vous apprendra à créer vos propres produits ménagers : lessive, liquide vaisselle, nettoyant multi-surfaces, et désodorisant, tous à base d'ingrédients naturels (bicarbonate, savon de Marseille, vinaigre blanc, huiles essentielles). Animé par des experts du mouvement zéro déchet, cet atelier vise à vous donner les clés pour réduire drastiquement vos emballages plastiques. Chaque participant repart avec ses propres créations. Places très limitées !",
+      "date": "2026-02-27T00:00:00.000Z",
+      "time": "10:00",
+      "location": "Maison des Associations",
+      "city": "Sfax",
+      "spots": 20,
+      "spotsLeft": 5,
+      "imageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800",
+      "organizer": "Collectif Zér0 Déchet",
+      "duration": "2 heures 30",
+      "requirements": [
+        "Cuillères et bocaux vides propres",
+        "Tablier (optionnel)",
+        "Carnet de notes"
+      ],
+      "tags": [
+        "zérodéchet",
+        "plastique",
+        "DIY",
+        "naturel"
+      ],
+      "createdAt": "2026-01-08T08:00:00.000Z"
+    },
+    {
+      "id": "m4",
+      "title": "Sensibilisation Écologique dans les Écoles",
+      "category": "education",
+      "description": "Animez des ateliers de sensibilisation environnementale auprès d'élèves de primaire.",
+      "longDescription": "L'éducation environnementale est la clé d'un avenir durable. Dans ce programme, vous interviendrez dans plusieurs écoles primaires de Sousse pour animer des ateliers ludiques sur le tri des déchets, la biodiversité, et l'eau. Des fiches pédagogiques et matériel éducatif seront fournis. Cette mission est idéale pour les enseignants, étudiants en éducation, ou toute personne à l'aise avec les enfants. Votre impact sera direct et mesurable !",
+      "date": "2026-03-10T00:00:00.000Z",
+      "time": "09:00",
+      "location": "École Primaire Ibn Khaldoun",
+      "city": "Sousse",
+      "spots": 15,
+      "spotsLeft": 8,
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
+      "organizer": "EcoEdu TN",
+      "duration": "4 heures",
+      "requirements": [
+        "Aisance avec les enfants",
+        "Tenue correcte",
+        "Matériel fourni sur place"
+      ],
+      "tags": [
+        "éducation",
+        "enfants",
+        "sensibilisation",
+        "école"
+      ],
+      "createdAt": "2026-01-20T08:00:00.000Z"
+    },
+    {
+      "id": "m5",
+      "title": "Grande Collecte – Plage de La Marsa",
+      "category": "beach",
+      "description": "Rejoignez la plus grande opération de nettoyage de la côte Nord. 200 bénévoles attendus !",
+      "longDescription": "Événement phare d'EcoAction, la Grande Collecte de La Marsa réunit chaque trimestre des centaines de bénévoles pour nettoyer la côte. Cette édition ciblera particulièrement les zones rocheuses où les déchets s'accumulent. Des équipes se formeront avec un coordinateur pour chaque groupe de 10 personnes. L'événement se terminera par un barbecue convivial offert par nos sponsors.",
+      "date": "2026-03-20T00:00:00.000Z",
+      "time": "09:00",
+      "location": "Plage de La Marsa",
+      "city": "La Marsa",
+      "spots": 200,
+      "spotsLeft": 0,
+      "imageUrl": "https://images.unsplash.com/photo-1483683804023-6ccbe43ee5fd?w=800",
+      "organizer": "Association EcoAction",
+      "duration": "4 heures",
+      "requirements": [
+        "Chaussures fermées",
+        "Vêtements confortables",
+        "Tout est fourni !"
+      ],
+      "tags": [
+        "grande collecte",
+        "plage",
+        "communauté",
+        "barbecue"
+      ],
+      "createdAt": "2026-01-05T08:00:00.000Z"
+    },
+    {
+      "id": "m6",
+      "title": "Compostage Urbain – Initiation Pratique",
+      "category": "waste",
+      "description": "Découvrez les bases du compostage pour transformer vos déchets organiques en ressource précieuse.",
+      "longDescription": "Le compostage est une solution simple et efficace pour réduire les déchets alimentaires de 30%. Cet atelier pratique vous apprendra à identifier les matières compostables, à maintenir le bon équilibre carbone/azote, et à utiliser le compost obtenu dans votre jardin ou vos plantes d'intérieur. Vous repartez avec votre propre composteur de balcon (offert !) et les connaissances pour devenir un maître composteur.",
+      "date": "2026-02-28T00:00:00.000Z",
+      "time": "15:00",
+      "location": "Jardin Public El Mourouj",
+      "city": "Ben Arous",
+      "spots": 25,
+      "spotsLeft": 14,
+      "imageUrl": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800",
+      "organizer": "Terre Vivante TN",
+      "duration": "2 heures",
+      "requirements": [
+        "Gants de jardinage",
+        "Cuillère ou truelle",
+        "Bonne humeur !"
+      ],
+      "tags": [
+        "compost",
+        "déchets",
+        "jardinage",
+        "organique"
+      ],
+      "createdAt": "2026-01-18T08:00:00.000Z"
+    },
+    {
+      "id": "m7",
+      "title": "Reboisement des Rives de l'Oued Medjerda",
+      "category": "forest",
+      "description": "Replantez des espèces riveraines pour stabiliser les berges et protéger la biodiversité aquatique.",
+      "longDescription": "L'Oued Medjerda, principal fleuve de Tunisie, souffre d'érosion sévère de ses berges. Cette mission vise à planter des espèces végétales adaptées (roseaux, saules, tamaris) pour stabiliser le sol et filtrer les polluants agricoles avant qu'ils n'atteignent la mer. En partenariat avec l'ANPE, cette action s'inscrit dans un plan de restauration écologique sur 5 ans.",
+      "date": "2026-03-15T00:00:00.000Z",
+      "time": "07:30",
+      "location": "Rives de l'Oued Medjerda",
+      "city": "Medjez el-Bab",
+      "spots": 40,
+      "spotsLeft": 31,
+      "imageUrl": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800",
+      "organizer": "ANPE – Partenaire EcoAction",
+      "duration": "6 heures",
+      "requirements": [
+        "Bottes imperméables fortement recommandées",
+        "Vêtements chauds (matin froid)",
+        "Pique-nique pour le midi"
+      ],
+      "tags": [
+        "rivière",
+        "reboisement",
+        "eau",
+        "nature"
+      ],
+      "createdAt": "2026-01-25T08:00:00.000Z"
+    },
+    {
+      "id": "m8",
+      "title": "Festival EcoAction – Stands & Animations",
+      "category": "education",
+      "description": "Aidez à organiser le premier festival annuel EcoAction : stands, animations, et ateliers pour le grand public.",
+      "longDescription": "Le Festival EcoAction 2026 réunira plus de 2 000 visiteurs au parc du Belvédère à Tunis. Nous avons besoin de bénévoles pour animer des stands pédagogiques, guider les visiteurs, gérer les déchets de l'événement (tri sélectif), et porter la philosophie EcoAction auprès de tous. Une journée festive et mémorable qui fera connaître notre mouvement à toute la capitale !",
+      "date": "2026-04-05T00:00:00.000Z",
+      "time": "09:00",
+      "location": "Parc du Belvédère",
+      "city": "Tunis",
+      "spots": 80,
+      "spotsLeft": 45,
+      "imageUrl": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800",
+      "organizer": "Association EcoAction",
+      "duration": "8 heures",
+      "requirements": [
+        "T-shirt EcoAction fourni",
+        "Enthousiasme et sourire 😊",
+        "Disponibilité toute la journée"
+      ],
+      "tags": [
+        "festival",
+        "animation",
+        "grand public",
+        "Tunis"
+      ],
+      "createdAt": "2026-02-01T08:00:00.000Z"
+    },
+    {
+      "id": "m9",
+      "title": "Audit Déchets – Quartier Menzah VI",
+      "category": "waste",
+      "description": "Participez au premier audit citoyen des déchets pour mesurer et analyser la composition des poubelles d'un quartier.",
+      "longDescription": "Savez-vous ce que contiennent réellement les poubelles de votre quartier ? Cet audit scientifique, encadré par des ingénieurs environnementaux, collectera et analysera les poubelles de 50 foyers volontaires pour établir le profil de déchets du quartier. Les résultats alimenteront un rapport transmis à la municipalité pour améliorer les services de collecte et de tri. Une expérience unique entre science citoyenne et engagement environnemental.",
+      "date": "2026-04-12T00:00:00.000Z",
+      "time": "08:00",
+      "location": "Quartier Menzah VI",
+      "city": "Ariana",
+      "spots": 12,
+      "spotsLeft": 7,
+      "imageUrl": "https://images.unsplash.com/photo-1611284446314-60a58ac0debb?w=800",
+      "organizer": "GreenData TN",
+      "duration": "4 heures",
+      "requirements": [
+        "Gants robustes",
+        "Masque de protection",
+        "Vêtements résistants"
+      ],
+      "tags": [
+        "audit",
+        "science citoyenne",
+        "analyse",
+        "municipal"
+      ],
+      "createdAt": "2026-02-05T08:00:00.000Z"
+    },
+    {
+      "id": "m10",
+      "title": "Balade Nature – Parc National de l'Ichkeul",
+      "category": "forest",
+      "description": "Découverte guidée du Parc National de l'Ichkeul, site UNESCO, avec nettoyage des sentiers naturels.",
+      "longDescription": "L'Ichkeul est le seul parc national en Afrique du Nord classé au patrimoine mondial UNESCO. Cette balade guidée de 7 km vous emmènera à travers des zones humides uniques, habitat de milliers d'oiseaux migrateurs. Tout en profitant de la nature, nous nettoierons les sentiers des déchets abandonnés par les promeneurs irrespecteux. Le parc garde vous racontera l'histoire écologique de ce lieu exceptionnel.",
+      "date": "2026-04-19T00:00:00.000Z",
+      "time": "06:30",
+      "location": "Parc National de l'Ichkeul",
+      "city": "Bizerte",
+      "spots": 35,
+      "spotsLeft": 22,
+      "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+      "organizer": "Randonneurs Verts TN",
+      "duration": "7 heures",
+      "requirements": [
+        "Chaussures de randonnée",
+        "Vêtements en couches (matin froid)",
+        "Pique-nique complet",
+        "Jumelles (optionnel)"
+      ],
+      "tags": [
+        "UNESCO",
+        "randonnée",
+        "oiseaux",
+        "zones humides"
+      ],
+      "createdAt": "2026-02-08T08:00:00.000Z"
+    }
+  ],
+  "participations": [
+    {
+      "id": "c12b",
+      "userId": "2f19",
+      "missionId": "m2",
+      "status": "confirmed",
+      "createdAt": "2026-02-19T21:30:22.511Z"
+    }
+  ]
+}
