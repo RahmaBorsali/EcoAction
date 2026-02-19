@@ -1,4 +1,3 @@
-// app/(tabs)/_layout.tsx
 import React, { useEffect } from 'react';
 import { Tabs, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';

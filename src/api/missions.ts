@@ -2,18 +2,8 @@
 import { Category, Mission } from '../types';
 import apiClient from './client';
 
-export const getMissions = async (
-    category?: Category,
-    search?: string
-): Promise<Mission[]> => {
-    const params: Record<string, string> = {};
-    if (category && category !== 'all') {
-        params.category = category;
-    }
-    if (search && search.trim()) {
-        params.q = search.trim();
-    }
-    const response = await apiClient.get<Mission[]>('/missions', { params });
+export const getMissions = async (): Promise<Mission[]> => {
+    const response = await apiClient.get<Mission[]>('/missions');
     return response.data;
 };
 
@@ -28,6 +18,15 @@ export const updateMissionSpots = async (
 ): Promise<Mission> => {
     const response = await apiClient.patch<Mission>(`/missions/${missionId}`, {
         spotsLeft,
+    });
+    return response.data;
+};
+export const createMission = async (
+    missionData: Omit<Mission, 'id' | 'createdAt'>
+): Promise<Mission> => {
+    const response = await apiClient.post<Mission>('/missions', {
+        ...missionData,
+        createdAt: new Date().toISOString(),
     });
     return response.data;
 };

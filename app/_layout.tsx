@@ -38,6 +38,13 @@ export default function RootLayout() {
                                 animation: 'slide_from_right',
                             }}
                         />
+                        <Stack.Screen
+                            name="mission/create"
+                            options={{
+                                headerShown: false,
+                                presentation: 'modal',
+                            }}
+                        />
                     </Stack>
                 </SafeAreaProvider>
             </AuthProvider>

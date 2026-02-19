@@ -102,7 +102,7 @@
       "location": "Maison des Associations",
       "city": "Sfax",
       "spots": 20,
-      "spotsLeft": 5,
+      "spotsLeft": 6,
       "imageUrl": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800",
       "organizer": "Collectif Zér0 Déchet",
       "duration": "2 heures 30",
@@ -242,7 +242,7 @@
       "location": "Parc du Belvédère",
       "city": "Tunis",
       "spots": 80,
-      "spotsLeft": 45,
+      "spotsLeft": 46,
       "imageUrl": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800",
       "organizer": "Association EcoAction",
       "duration": "8 heures",
@@ -315,6 +315,31 @@
         "zones humides"
       ],
       "createdAt": "2026-02-08T08:00:00.000Z"
+    },
+    {
+      "id": "41e0",
+      "title": "education",
+      "category": "education",
+      "description": "eduuuuu",
+      "longDescription": "eduuuuu",
+      "city": "rades",
+      "location": "rades plage",
+      "spots": 30,
+      "spotsLeft": 29,
+      "date": "2026-05-01T00:00:00.000Z",
+      "time": "09:00",
+      "imageUrl": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800",
+      "organizer": "Bénévole EcoAction",
+      "duration": "3 heures",
+      "requirements": [
+        "Bonne humeur",
+        "Gourde d'eau"
+      ],
+      "tags": [
+        "education",
+        "rades"
+      ],
+      "createdAt": "2026-02-19T22:19:36.611Z"
     }
   ],
   "participations": [
@@ -350,8 +375,22 @@
       "id": "21a1",
       "userId": "a887",
       "missionId": "m8",
-      "status": "confirmed",
+      "status": "cancelled",
       "createdAt": "2026-02-19T21:50:39.403Z"
+    },
+    {
+      "id": "48ca",
+      "userId": "a887",
+      "missionId": "m3",
+      "status": "cancelled",
+      "createdAt": "2026-02-19T21:59:41.328Z"
+    },
+    {
+      "id": "9ba2",
+      "userId": "a887",
+      "missionId": "41e0",
+      "status": "confirmed",
+      "createdAt": "2026-02-19T22:20:29.330Z"
     }
   ]
 }

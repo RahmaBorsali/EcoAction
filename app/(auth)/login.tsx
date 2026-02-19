@@ -127,12 +127,6 @@ export default function LoginScreen() {
                             )}
                         </TouchableOpacity>
 
-                        {/* Demo account hint */}
-                        <View style={styles.hintBox}>
-                            <Ionicons name="information-circle-outline" size={14} color="#52B788" />
-                            <Text style={styles.hintText}>Compte démo : demo@ecoaction.fr / demo123</Text>
-                        </View>
-
                         {/* Register link */}
                         <View style={styles.registerRow}>
                             <Text style={styles.registerText}>Pas encore inscrit ? </Text>
