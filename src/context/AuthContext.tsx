@@ -59,10 +59,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }, []);
 
     const register = useCallback(async (credentials: RegisterCredentials) => {
-        const response: AuthResponse = await registerUser(credentials);
-        setUser(response.user);
-        await SecureStore.setItemAsync(USER_KEY, JSON.stringify(response.user));
-        await SecureStore.setItemAsync(TOKEN_KEY, response.token);
+        await registerUser(credentials);
+        // We don't call setUser here because the user should log in manually after signup
     }, []);
 
     const logout = useCallback(async () => {

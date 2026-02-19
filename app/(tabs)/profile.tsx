@@ -126,7 +126,11 @@ export default function ProfileScreen() {
 
                     <View style={styles.divider} />
 
-                    <View style={styles.menuItem}>
+                    <TouchableOpacity
+                        style={styles.menuItem}
+                        onPress={() => Alert.alert('Information', 'La gestion des notifications sera disponible prochainement.')}
+                        activeOpacity={0.7}
+                    >
                         <View style={styles.menuLeft}>
                             <View style={[styles.menuIcon, { backgroundColor: '#FFF0E6' }]}>
                                 <Ionicons name="notifications-outline" size={18} color="#E07B39" />
@@ -134,11 +138,15 @@ export default function ProfileScreen() {
                             <Text style={styles.menuText}>Notifications</Text>
                         </View>
                         <Ionicons name="chevron-forward" size={18} color="#AABFB8" />
-                    </View>
+                    </TouchableOpacity>
 
                     <View style={styles.divider} />
 
-                    <View style={styles.menuItem}>
+                    <TouchableOpacity
+                        style={styles.menuItem}
+                        onPress={() => Alert.alert('Information', 'Les paramètres de confidentialité seront disponibles prochainement.')}
+                        activeOpacity={0.7}
+                    >
                         <View style={styles.menuLeft}>
                             <View style={[styles.menuIcon, { backgroundColor: '#E0F4FF' }]}>
                                 <Ionicons name="shield-checkmark-outline" size={18} color="#0077B6" />
@@ -146,7 +154,7 @@ export default function ProfileScreen() {
                             <Text style={styles.menuText}>Confidentialité</Text>
                         </View>
                         <Ionicons name="chevron-forward" size={18} color="#AABFB8" />
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
                 {/* Logout */}

@@ -17,6 +17,8 @@ export default function RegisterScreen() {
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState<Record<string, string>>({});
 
+    const [showSuccess, setShowSuccess] = useState(false);
+
     const { register } = useAuth();
     const router = useRouter();
 
@@ -34,12 +36,17 @@ export default function RegisterScreen() {
         setIsLoading(true);
         try {
             await register({ name: name.trim(), email: email.trim().toLowerCase(), password });
-            router.replace('/(tabs)');
+            setShowSuccess(true);
         } catch (err: unknown) {
             Alert.alert('Erreur', (err as { message?: string })?.message ?? 'Inscription impossible');
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const handleSuccessDone = () => {
+        setShowSuccess(false);
+        router.replace('/(auth)/login');
     };
 
     const field = (
@@ -58,15 +65,15 @@ export default function RegisterScreen() {
                     style={styles.input}
                     value={value}
                     onChangeText={(t) => { onChange(t); setErrors((e) => { const c = { ...e }; delete c[key]; return c; }); }}
-                    secureTextEntry={opts?.secure && !showPwd}
+                    secureTextEntry={opts?.secure ? !showPwd : false}
                     keyboardType={opts?.keyboard ?? 'default'}
-                    autoCapitalize={opts?.keyboard === 'email-address' ? 'none' : 'words'}
+                    autoCapitalize="none"
                     autoCorrect={false}
                     placeholderTextColor="#AABFB8"
                 />
                 {opts?.showToggle && (
-                    <TouchableOpacity onPress={() => setShowPwd((v) => !v)}>
-                        <Ionicons name={showPwd ? 'eye-off-outline' : 'eye-outline'} size={18} color="#636E72" />
+                    <TouchableOpacity onPress={() => setShowPwd((v) => !v)} style={styles.toggleBtn}>
+                        <Ionicons name={showPwd ? 'eye-off-outline' : 'eye-outline'} size={20} color="#636E72" />
                     </TouchableOpacity>
                 )}
             </View>
@@ -122,7 +129,33 @@ export default function RegisterScreen() {
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>
+
+            {/* Beautiful Success Modal */}
+            <SuccessModal
+                visible={showSuccess}
+                onClose={handleSuccessDone}
+                title="Bienvenue !"
+                message="Votre compte a été créé avec succès. Vous pouvez maintenant vous connecter."
+            />
         </SafeAreaView>
+    );
+}
+
+// Custom Success Modal Component
+function SuccessModal({ visible, onClose, title, message }: { visible: boolean, onClose: () => void, title: string, message: string }) {
+    return (
+        <View style={visible ? styles.modalOverlay : { display: 'none' }}>
+            <View style={styles.modalCard}>
+                <View style={styles.modalIconWrap}>
+                    <Ionicons name="checkmark-circle" size={60} color="#52B788" />
+                </View>
+                <Text style={styles.modalTitle}>{title}</Text>
+                <Text style={styles.modalMsg}>{message}</Text>
+                <TouchableOpacity style={styles.modalBtn} onPress={onClose}>
+                    <Text style={styles.modalBtnText}>Se connecter</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
     );
 }
 
@@ -168,4 +201,24 @@ const styles = StyleSheet.create({
     loginRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 20 },
     loginText: { fontSize: 14, color: '#636E72' },
     loginLink: { fontSize: 14, color: '#2D6A4F', fontWeight: '700' },
+    toggleBtn: { padding: 4 },
+    // Modal Styles
+    modalOverlay: {
+        position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+        backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center',
+        zIndex: 1000,
+    },
+    modalCard: {
+        backgroundColor: '#fff', width: '85%', borderRadius: 24,
+        padding: 30, alignItems: 'center',
+        shadowColor: '#000', shadowOffset: { width: 0, height: 10 }, shadowOpacity: 0.2, shadowRadius: 20, elevation: 10,
+    },
+    modalIconWrap: { marginBottom: 20 },
+    modalTitle: { fontSize: 22, fontWeight: '900', color: '#1B3A2D', marginBottom: 12 },
+    modalMsg: { fontSize: 15, color: '#636E72', textAlign: 'center', lineHeight: 22, marginBottom: 24 },
+    modalBtn: {
+        backgroundColor: '#2D6A4F', paddingVertical: 14, paddingHorizontal: 32, borderRadius: 14,
+        width: '100%', alignItems: 'center',
+    },
+    modalBtnText: { color: '#fff', fontSize: 16, fontWeight: '800' },
 });

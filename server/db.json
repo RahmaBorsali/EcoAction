@@ -14,6 +14,21 @@
         "impact": "0 kg de déchets collectés"
       },
       "createdAt": "2026-02-19T21:30:00.430Z"
+    },
+    {
+      "id": "a887",
+      "name": "Takwa Borsali",
+      "email": "takwaborsali9@gmail.com",
+      "password": "Takwa@2008",
+      "avatar": "https://ui-avatars.com/api/?name=Takwa%20Borsali&background=2D6A4F&color=fff&size=200",
+      "bio": "Nouveau bénévole EcoAction 🌱",
+      "stats": {
+        "missionsCompleted": 0,
+        "upcomingMissions": 0,
+        "totalHours": 0,
+        "impact": "0 kg de déchets collectés"
+      },
+      "createdAt": "2026-02-19T21:49:21.614Z"
     }
   ],
   "missions": [
@@ -309,6 +324,34 @@
       "missionId": "m2",
       "status": "confirmed",
       "createdAt": "2026-02-19T21:30:22.511Z"
+    },
+    {
+      "id": "1caf",
+      "userId": "2f19",
+      "missionId": "m8",
+      "status": "cancelled",
+      "createdAt": "2026-02-19T21:34:05.472Z"
+    },
+    {
+      "id": "f45d",
+      "userId": "2f19",
+      "missionId": "m8",
+      "status": "confirmed",
+      "createdAt": "2026-02-19T21:34:11.177Z"
+    },
+    {
+      "id": "7485",
+      "userId": "a887",
+      "missionId": "m8",
+      "status": "cancelled",
+      "createdAt": "2026-02-19T21:50:00.369Z"
+    },
+    {
+      "id": "21a1",
+      "userId": "a887",
+      "missionId": "m8",
+      "status": "confirmed",
+      "createdAt": "2026-02-19T21:50:39.403Z"
     }
   ]
 }
