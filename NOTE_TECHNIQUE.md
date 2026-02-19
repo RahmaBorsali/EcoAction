@@ -31,64 +31,31 @@
 
 ## 2. Typage TypeScript Strict
 
-Le projet est configuré avec `"strict": true` et `"noImplicitAny": true`. Aucun type `any` n'est utilisé dans le code source.
-
-**Interfaces principales** :
-
-```ts
-interface Mission {
-  id: string;
-  category: 'beach' | 'forest' | 'waste' | 'education'; // union type, pas d'any
-  spotsLeft: number;
-  requirements: string[];  // tableau typé
-  // ... 20 champs typés strictement
-}
-
-interface Participation {
-  status: 'confirmed' | 'cancelled'; // littéral union au lieu de string libre
-}
-```
+Le projet est configuré avec `"strict": true`. Aucun type `any` n'est toléré.
 
 **Gestion des types complexes** :
-- Les mutations `useMutation` sont paramétrées avec 4 génériques : `<TData, TError, TVariables, TContext>` permettant un type safe complet du contexte de rollback optimiste.
-- Les erreurs API sont typées via l'interface `ApiError { message, status, code }` et interceptées dans le client Axios.
-- Les paramètres de route Expo Router sont typés avec `useLocalSearchParams<{ id: string }>()`.
+- **Utilisation d'Omit** : Pour la création de missions, nous utilisons `Omit<Mission, 'id' | 'createdAt'>` pour garantir que les données envoyées correspondent au modèle attendu sans les champs générés par le serveur.
+- **Select Option** : Utilisation du générique `select` dans TanStack Query pour transformer/filtrer les données avant qu'elles n'atteignent le composant, assurant un typage strict même après filtrage.
+- **Interférences de types** : Les types sont centralisés dans `src/types/index.ts` et réutilisés de l'API jusqu'à la présentation.
 
 ---
 
-## 3. Stratégie de Mise en Cache – TanStack Query
+## 3. Stratégie de Mise en Cache & Performance
 
-### Configuration globale (QueryClient)
-
-| Paramètre | Valeur | Justification |
-|---|---|---|
-| `staleTime` | **5 minutes** | Les missions ne changent pas toutes les secondes. Évite des requêtes réseau inutiles sur chaque navigation entre écrans. |
-| `gcTime` | **10 minutes** | Le cache subsiste 10 min après démontage, permettant un retour rapide sans rechargement. |
-| `retry` | **2** | Deux tentatives automatiques sur erreur réseau (instabilité réseau réelle). |
-| `refetchOnWindowFocus` | **false** | Évite les refetch non nécessaires à chaque activation de l'app. |
+### Filtrage Côté Client (Client-Side Filtering)
+Pour résoudre les problèmes de latence et de perte de focus du clavier (focus loss), une stratégie de filtrage local a été adoptée :
+1. **Fetch Global** : `useMissions` récupère toutes les missions et les stocke dans le cache TanStack (`queryKey: ['missions']`).
+2. **Filtrage via `select`** : La recherche et le filtrage par catégorie sont effectués localement via la fonction `select`.
+3. **Avantage** : Recherche instantanée, pas de chargement réseau pendant la saisie (clavier reste ouvert), et expérience utilisateur fluide.
 
 ### Optimistic UI – Inscription aux Missions
-
-L'Optimistic UI est l'un des points forts de l'architecture :
-
+L'Optimistic UI est implémenté pour l'enrôlement :
 ```
-User tape "S'inscrire"
-    ↓
-onMutate : Annulation des requêtes en cours + snapshot du cache
-    ↓
-Mise à jour IMMÉDIATE du cache local (spotsLeft - 1) → UI réagit instantanément
-    ↓  
-Requête HTTP envoyée en arrière-plan
-    ↓
-  ✅ Succès → invalidateQueries → re-fetch propre depuis serveur
-  ❌ Erreur → rollback vers les données sauvegardées (snapshot)
+onMutate -> Snapshot du cache -> Update immédiat -> HTTP Request -> (Success: Invalidate | Error: Rollback)
 ```
 
-**Deux caches distincts** sont gérés simultanément lors d'une inscription :
-1. `['missions']` : décrémente `spotsLeft` de la mission concernée
-2. `['participations', userId]` : ajoute une participation optimiste temporaire
-
-Ce pattern garantit une expérience **fluide même sur réseau instable**, en restant cohérent avec la réalité serveur grâce au rollback automatique.
+### Invalidation de Cache – Création de Mission
+Lors de la création d'une nouvelle mission (`useCreateMission`), nous utilisons `queryClient.invalidateQueries({ queryKey: ['missions'] })`. Cela force l'application à rafraîchir la liste globale en arrière-plan, garantissant que la nouvelle mission s'affiche dès le retour à l'écran d'accueil sans intervention manuelle de l'utilisateur.
 
 ---
 
